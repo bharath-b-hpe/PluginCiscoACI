@@ -31,6 +31,11 @@ var (
 	ErrorKeyNotFound = errors.New("Key not Found in DB")
 )
 
+const (
+	// scanPaginationSize defines the size of DB keys to be scanned on single query
+	scanPaginationSize = 100
+)
+
 type dbCalls interface {
 	Create(table, resourceID, data string) (err error)
 	Update(table, resourceID, data string) (err error)
